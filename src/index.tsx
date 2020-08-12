@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { Provider } from "react-redux";
 import { configureStore, Action } from "@reduxjs/toolkit";
-import PhotoSlice from "./features/photos/PhotoSlice";
+import PhotosSliceReducer from "./features/photos/PhotoSlice";
 import { ThunkAction } from "redux-thunk";
 import { PhotoState } from "./features/photos/PhotoSlice";
 
@@ -11,7 +11,7 @@ export type AppThunk = ThunkAction<void, PhotoState, unknown, Action<string>>;
 
 const store = configureStore({
   reducer: {
-    photosStore: PhotoSlice,
+    photosStore: PhotosSliceReducer,
     // anyOtherStore: anyOtherSlice
   },
 });
