@@ -14,7 +14,7 @@ const initialState: PhotoState = {
   errors: "",
 };
 
-const photoSlice = createSlice({
+const photosSlice = createSlice({
   name: "photos",
   initialState,
   reducers: {
@@ -32,9 +32,9 @@ const photoSlice = createSlice({
   },
 });
 
-export const { setLoading, setErrors, setPhotos } = photoSlice.actions;
+export const { setLoading, setErrors, setPhotos } = photosSlice.actions;
 
-export default photoSlice.reducer;
+export default photosSlice.reducer;
 
 export const photoSelector = (state: { photosStore: PhotoState }) =>
   state.photosStore;
@@ -50,7 +50,6 @@ export const getPhotos = (): AppThunk => {
         `${baseURL}?api_key=${apiKey}&start_date=2020-05-07&end_date=2020-05-09`
       );
       dispatch(setLoading(false));
-      console.log(res.data);
       dispatch(setPhotos(res.data));
     } catch (error) {
       dispatch(setErrors(error.message));
