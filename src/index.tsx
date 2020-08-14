@@ -14,7 +14,7 @@ const store = configureStore({
     photosStore: PhotosSliceReducer,
     // anyOtherStore: anyOtherSlice,
     // middleware: ['array of middlewares'],
-  devTools: process.env.NODE_ENV !== "development" ? false : true,
+  devTools: process.env.NODE_ENV !== "development" ? false : true, //disable redux dev tools in PROD
   },
 });
 
