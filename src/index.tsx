@@ -12,7 +12,9 @@ export type AppThunk = ThunkAction<void, PhotoState, unknown, Action<string>>;
 const store = configureStore({
   reducer: {
     photosStore: PhotosSliceReducer,
-    // anyOtherStore: anyOtherSlice
+    // anyOtherStore: anyOtherSlice,
+    // middleware: ['array of middlewares'],
+  devTools: process.env.NODE_ENV !== "development" ? false : true,
   },
 });
 
